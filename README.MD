@@ -55,9 +55,9 @@ node ./src/bot/bot.js
 * Only ZKLend is supported at this time.
 
 # Roadmap
-- [ ]Release a rust implementation version for better performance and speed.  
-- [ ]In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
-- [ ]Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.  
+- [ ] Release a rust implementation version for better performance and speed.  
+- [ ] In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
+- [ ] Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.  
 
 
 Plutus aims to be an essential tool for MEV searchers, providing both practical functionality and valuable educational resources to the community.
