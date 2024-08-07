@@ -13,22 +13,17 @@ In addition to providing a powerful tool, this project aims to educate the commu
 
 # Setup Instructions
 To run the bot, you need to configure the environment variables as follows:
-```
-node 
-```
-
-Environment Variables:
 Set up the .env file with the required information:
 
 ```
-OZ_ACCOUNT_PRIVATE_KEY=""
-OZ_ACCOUNT_ADDRESS=""
-RPC_NODE_URL=""
+OZ_ACCOUNT_PRIVATE_KEY="YOUR_PRIVATE_KEY"
+OZ_ACCOUNT_ADDRESS="YOUR_ACCOUNT_ADDRESS"
+RPC_NODE_URL="YOUR_RPC_NODE_URL"
 USDC_ACCOUNT_ADDRESS="0x53c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8"
 USDT_ACCOUNT_ADDRESS="0x68f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8"
 ```
 
-Get historic borrowes:
+Get Historic Borrowers:
 Retrieve all current and historic borrowers from the platform by running the script getInitialBorrowers.
 ```
 node ./src/services/getInitialBorrowers.js
@@ -60,9 +55,9 @@ node ./src/bot/bot.js
 * Only ZKLend is supported at this time.
 
 # Roadmap
--[] Release a rust implementation version for better performance and speed.
--[] In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.
--[] Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.
+-[]Release a rust implementation version for better performance and speed.  
+-[]In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
+-[]Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.  
 
 
 Plutus aims to be an essential tool for MEV searchers, providing both practical functionality and valuable educational resources to the community.
