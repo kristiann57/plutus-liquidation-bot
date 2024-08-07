@@ -27,14 +27,28 @@ USDC_ACCOUNT_ADDRESS="0x53c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3e
 USDT_ACCOUNT_ADDRESS="0x68f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8"
 ```
 
-Gather Liquidators:
-Retrieve all current and historic borrowers from the platform by running the script Get Initial Borrowers.
+Get historic borrowes:
+Retrieve all current and historic borrowers from the platform by running the script getInitialBorrowers.
+```
+node ./src/services/getInitialBorrowers.js
+```
 
 Filter Active Borrowers:
 Identify and filter out non-active borrowers using the getOnlyActiveBorrowers script.
+```
+node ./src/services/getOnlyActiveBorrowers.js
+```
 
 Save Reserves Data:
 Capture all available reserves on the ZKLend platform by running the getReservesAssetsData script.
+```
+node ./src/services/getReservesAssetsData.js
+```
+
+# Run The Bot
+```
+node ./src/bot/bot.js
+```
 
 # Assumptions
 *The bot assumes your account is funded with sufficient debt assets to cover the debt portion of undercollateralized users. Without this, transaction and gas fee estimations will fail.
