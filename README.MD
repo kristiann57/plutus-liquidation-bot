@@ -12,6 +12,11 @@ In addition to providing a powerful tool, this project aims to educate the commu
 [Liquidation Bot on ZKLend (Starknet) Part 3— How much should I liquidate?](https://link.medium.com/XFrv1WcoGLb)   
 
 # Setup Instructions
+Install dependencies:
+```
+npm install
+```
+
 To run the bot, you need to configure the environment variables as follows:
 Set up the .env file with the required information:
 
