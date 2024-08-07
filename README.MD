@@ -1,4 +1,4 @@
-
+![Alt text](https://res.cloudinary.com/demo/image/upload/w_300/sample.jpg)
 # Plutus: A Liquidation Bot Framework for StarkNet
 Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV (Miner Extractable Value) searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot.
 
