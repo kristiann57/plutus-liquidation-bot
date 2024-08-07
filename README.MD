@@ -1,8 +1,8 @@
 
 # Plutus: A Liquidation Bot Framework for StarkNet
-Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV (Miner Extractable Value) searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot, tailored to their specific needs.
+Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV (Miner Extractable Value) searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot.
 
-The overarching goal of this repository is to support a wide range of lending protocols on StarkNet. Currently, Plutus is compatible with ZKLend, and efforts are underway to implement logic for additional protocols, such as Vesu.
+The overarching goal of this repository is to support a wide range of lending protocols on StarkNet. Currently, Plutus is compatible with ZKLend, and efforts are underway to implement logic for additional protocols, such as Vesu and more. Therefore, facilitating the extraction of value to newcomers.
 
 # Educational Resources
 In addition to providing a powerful tool, this project aims to educate the community by sharing techniques and insights from the MEV space. The development process of Plutus is thoroughly documented in a series of articles, detailing each step and the underlying thought process:
