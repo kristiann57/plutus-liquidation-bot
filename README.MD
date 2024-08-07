@@ -6,9 +6,9 @@ The overarching goal of this repository is to support a wide range of lending pr
 # Educational Resources
 In addition to providing a powerful tool, this project aims to educate the community by sharing techniques and insights from the MEV space. The development process of Plutus is thoroughly documented in a series of articles, detailing each step and the underlying thought process:
 
-[Liquidation Bot on ZKLend (Starknet) Part 1 — Introduction: who is borrowing?](https://link.medium.com/2T49dC5PRLb)    
-[Liquidation Bot on ZKLend (Starknet) Part 2 — Are you liquidatable?](https://link.medium.com/c4sbO38PRLb) 
-[Liquidation Bot on ZKLend (Starknet) Part 3— How much should I liquidate?](https://link.medium.com/XFrv1WcoGLb) 
+[Liquidation Bot on ZKLend (Starknet) Part 1 — Introduction: who is borrowing?](https://link.medium.com/2T49dC5PRLb)      
+[Liquidation Bot on ZKLend (Starknet) Part 2 — Are you liquidatable?](https://link.medium.com/c4sbO38PRLb)   
+[Liquidation Bot on ZKLend (Starknet) Part 3— How much should I liquidate?](https://link.medium.com/XFrv1WcoGLb)   
 
 # Setup Instructions
 To run the bot, you need to configure the environment variables as follows:
