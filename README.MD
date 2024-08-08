@@ -54,6 +54,7 @@ node ./src/bot/bot.js
 # Assumptions
 * The bot assumes your account is funded with sufficient debt assets to cover the debt portion of undercollateralized users. Without this, transaction and gas fee estimations will fail.
 * The bot requires an RPC node without call limits, as the current design involves multiple calls that can quickly exceed limits, causing errors.
+* The bot assumes you have approved the zkLend markets contract to spend the required assets for the liquidation.
 
 # Limitations
 * Currently, the bot only works with users holding a single asset as collateral. Support for multiple assets is in development.
