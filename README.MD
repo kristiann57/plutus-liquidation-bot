@@ -1,6 +1,6 @@
 ![Alt text](https://res.cloudinary.com/de8kng0rk/image/upload/v1723038935/lqmxdqbt0wng48avzo7n.jpg)
 # Plutus: A Liquidation Bot Framework for StarkNet
-Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV (Miner Extractable Value) searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot.
+Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot.
 
 The overarching goal of this repository is to support a wide range of lending protocols on StarkNet. Currently, Plutus is compatible with ZKLend, and efforts are underway to implement logic for additional protocols, such as Vesu and more. Therefore, facilitating the extraction of value to newcomers.
 
@@ -60,6 +60,7 @@ node ./src/bot/bot.js
 * Only ZKLend is supported at this time.
 
 # Roadmap
+- [ ] Optimize direct blockchain querying
 - [ ] Release a rust implementation version for better performance and speed.  
 - [ ] In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
 - [ ] Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.  
