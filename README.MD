@@ -1,5 +1,5 @@
 ![Alt text](https://res.cloudinary.com/de8kng0rk/image/upload/v1723038935/lqmxdqbt0wng48avzo7n.jpg)
-# Plutus: A Liquidation Bot Framework for StarkNet
+# Plutus: A Liquidation Bot Framework for StarkNet (Beta)
 Plutus is a liquidation bot written in JavaScript, designed to provide a robust framework for new MEV searchers on StarkNet. This project aims to enable users to quickly set up and customize a fully functional liquidation bot.
 
 The overarching goal of this repository is to support a wide range of lending protocols on StarkNet. Currently, Plutus is compatible with ZKLend, and efforts are underway to implement logic for additional protocols, such as Vesu and more. Therefore, facilitating the extraction of value to newcomers.
@@ -29,7 +29,7 @@ USDT_ACCOUNT_ADDRESS="0x68f5c6a61780768455de69077e07e89787839bf8166decfbf92b6452
 ```
 
 Get Historic Borrowers:
-Retrieve all current and historic borrowers from the platform by running the script getInitialBorrowers.
+Retrieve all current and historic borrowers from the platform by running the script getInitialBorrowers. (Be aware this process might take some time)
 ```
 node ./src/services/getInitialBorrowers.js
 ```
@@ -51,14 +51,31 @@ node ./src/services/getReservesAssetsData.js
 node ./src/bot/bot.js
 ```
 
+# Example Files
+I have included a few example files for those who prefer not to wait to gather the information mentioned above. While I still recommend collecting all borrower data and filtering it, you can use the following files for testing purposes:
+
+* onlyActiveBorrowers.json
+* uniqueBorrowerAddresses.json
+* reservesData.json
+
 # Assumptions
 * The bot assumes your account is funded with sufficient debt assets to cover the debt portion of undercollateralized users. Without this, transaction and gas fee estimations will fail.
 * The bot requires an RPC node without call limits, as the current design involves multiple calls that can quickly exceed limits, causing errors.
 * The bot assumes you have approved the zkLend markets contract to spend the required assets for the liquidation.
 
 # Limitations
-* Currently, the bot only works with users holding a single asset as collateral. Support for multiple assets is in development.
-* Only ZKLend is supported at this time.
+* This early version, written in JavaScript, currently queries the blockchain to check if a given borrower's address is undercollateralized. If the borrower is undercollateralized, the bot calculates the amount that should be liquidated. You might be lucky and perform a profitable liquidation, but this version is primarily designed for educational purposes rather than performance optimization. Future updates will focus on improving efficiency.
+* At this time, only ZKLend is supported.
+
+# Comment Logs
+This bot is designed to educate users on how liquidations are performed in various StarkNet lending protocols. The code includes extensive comments logs to help newcomers understand how it functions and what information it retrieves. If you wish to disable these logs, you'll need to do so manually for now.
+
+# Errors
+Please note that this is a beta version, so errors and bugs may occur. The most common errors you might encounter include:
+
+* "sub_u256_overflow": This error likely indicates that you need to authorize the lending protocol to take the debt you are repaying in the liquidator.
+* "MK_INVALID_LIQUIDATION": This error means that the liquidation amount leaves the borrower overcollateralized (health factor above 1). Although this shouldn't happen—since algebra is used to calculate the correct amount—you might encounter this error occasionally. It seems to occur when the collateral asset and debt asset are the same. I'll investigate this issue further, as it's an unusual behavior.
+
 
 # Roadmap
 - [ ] Optimize direct blockchain querying
