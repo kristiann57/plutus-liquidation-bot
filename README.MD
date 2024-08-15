@@ -27,6 +27,7 @@ RPC_NODE_URL="YOUR_RPC_NODE_URL"
 USDC_ACCOUNT_ADDRESS="0x53c91253bc9682c04929ca02ed00b3e423f6710d2ee7e0d5ebb06f3ecf368a8"
 USDT_ACCOUNT_ADDRESS="0x68f5c6a61780768455de69077e07e89787839bf8166decfbf92b645209c0fb8"
 ```
+_I have added the USDT and USDC addresses, as these are the tokens I funded my bot with. The bot performs several checks after calculating the debt amount. If the debt asset is not one of the tokens I funded the bot with, it will not execute the transaction and will move on to the next borrower._
 
 Get Historic Borrowers:
 Retrieve all current and historic borrowers from the platform by running the script getInitialBorrowers. (Be aware this process might take some time)
@@ -70,16 +71,21 @@ I have included a few example files for those who prefer not to wait to gather t
 # Comment Logs
 This bot is designed to educate users on how liquidations are performed in various StarkNet lending protocols. The code includes extensive comments logs to help newcomers understand how it functions and what information it retrieves. If you wish to disable these logs, you'll need to do so manually for now.
 
-# Errors
-Please note that this is a beta version, so errors and bugs may occur. Errors you might encounter include:
+# Expected Output:
+
+
+# Known Issues
+Please note that this is a beta version, so errors and bugs may occur. The most common errors you might encounter include:
 
 * "sub_u256_overflow": This error likely indicates that you need to authorize the lending protocol to take the debt you are repaying in the liquidator.
-* "MK_INVALID_LIQUIDATION": This error means that the liquidation amount leaves the borrower overcollateralized (health factor above 1). Although this shouldn't happen—since algebra is used to calculate the correct amount—you might encounter this error occasionally. It seems to occur when the collateral asset and debt asset are the same. I'll investigate this issue further, as it's an unusual behavior.
+* "MK_INVALID_LIQUIDATION": This error means that the liquidation amount leaves the borrower overcollateralized (health factor above 1). Although this shouldn't happen—since algebra is used to calculate the correct amount—you might encounter this error occasionally. It seems to occur when the collateral asset and debt asset are the same. I'll investigate this issue further, as it's an unusual behavior. Additionally, this could happen if the simulation is performed on a later block than when the information was originally fetched, meaning the liquidation opportunity may no longer be available. I'll investigate this issue further as it's an unusual behavior.
+* Negative liquidation amount: This is an uncommon issue, but sometimes the calculated liquidation amount may result in a negative value. This is currently under investigation.
 
 
 # Roadmap
-- [ ] Add multi Collateral/debt asset capabilities
+
 - [ ] Optimize direct blockchain querying
+- [ ] Add multi Collateral/debt asset capabilities
 - [ ] Release a rust implementation version for better performance and speed.  
 - [ ] In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
 - [ ] Event Subscriptions: Adding event subscription capabilities to respond to price changes dynamically, rather than relying on constant queries.  
