@@ -71,13 +71,14 @@ I have included a few example files for those who prefer not to wait to gather t
 This bot is designed to educate users on how liquidations are performed in various StarkNet lending protocols. The code includes extensive comments logs to help newcomers understand how it functions and what information it retrieves. If you wish to disable these logs, you'll need to do so manually for now.
 
 # Errors
-Please note that this is a beta version, so errors and bugs may occur. The most common errors you might encounter include:
+Please note that this is a beta version, so errors and bugs may occur. Errors you might encounter include:
 
 * "sub_u256_overflow": This error likely indicates that you need to authorize the lending protocol to take the debt you are repaying in the liquidator.
 * "MK_INVALID_LIQUIDATION": This error means that the liquidation amount leaves the borrower overcollateralized (health factor above 1). Although this shouldn't happen—since algebra is used to calculate the correct amount—you might encounter this error occasionally. It seems to occur when the collateral asset and debt asset are the same. I'll investigate this issue further, as it's an unusual behavior.
 
 
 # Roadmap
+- [ ] Add multi Collateral/debt asset capabilities
 - [ ] Optimize direct blockchain querying
 - [ ] Release a rust implementation version for better performance and speed.  
 - [ ] In-Memory Database: Implementing an in-memory database for faster data fetching, reducing the need for disk operations.  
